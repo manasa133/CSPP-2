@@ -99,6 +99,7 @@ class stringJava{
 		// String p = i +"hello";
 		// System.out.println(p);
 		//Scanner sc  = new Scanner(System.in);
+		//String s  = sc.nextLine()
 		// //System.out.println(sc.nextLine());
 		// System.out.println(sc.next());
 		// System.out.println(sc.next());
