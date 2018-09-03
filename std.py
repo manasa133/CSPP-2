@@ -8,8 +8,11 @@ class Student(object):
 		print(self.name)
 		return sum(marks)/len(marks)
 
+	def __str_(self):
+		return self.name
+
 
 obj = Student("bcd")
-print(obj.name)
+print(obj)
 # obj.name = "hai"
 # obj.avgMarks([1,2,3,5])

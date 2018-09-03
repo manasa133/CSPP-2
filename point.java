@@ -1,13 +1,13 @@
 class point {
 	private int x,y;
 	// point(){
-		
+
 	// }
 
-	// point(int p, int q){
-	// 	x=p;
-	// 	y=q;
-	// }
+	point(int p, int q){
+		x=p;
+		y=q;
+	}
 	int getX(){
 		return x;
 	}
@@ -26,11 +26,22 @@ class point {
 
 		return 0.0;
 	}
+
+	public String toString(){
+		return "points "+x+" "+ y;
+	}
+	public String toString(int a){
+		return "points "+x+" "+ y;
+	}
+
+
 	public static void main(String[] args) {
+		// point p;
 		point p1 =new point(1,2);
-		point p2 = new point(3,4);
-		p1.distance(p2);
-		p2.distance(p1);
-		new point().distance(p1,p2);
+		System.out.println(p1);
+		// point p2 = new point(3,4);
+		// p1.distance(p2);
+		// p2.distance(p1);
+		// new point().distance(p1,p2);
 	}
 }
