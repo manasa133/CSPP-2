@@ -75,7 +75,6 @@ public class List {
         // That is the initial value to use for size.
         arr = new int[10];
         size = 0;
-
     }
     
     /*
@@ -133,9 +132,8 @@ public class List {
         // Think about what to do to the size variable.
         //System.out.println("index"+""+index +"len" + arr.length);
         if(index > 0 && index < size){
-        	for(int i =index-1;i< arr.length-1;i++){
+        	for(int i =index-1;i< size;i++){
         	arr[i]=arr[i+1];
-
         }
         --size;
         }
