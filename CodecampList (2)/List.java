@@ -221,7 +221,7 @@ public class List {
         	index++;
         	if(i == item) return index;
         }
-        return index;
+        return -1;
     }
 
 	public static void main(String[] args) {
