@@ -112,7 +112,7 @@ public class List<E> {
      */
     public E get(int index) {
          //Write logic for get method
-          if(index <0 || index>size){
+        if(index <0 || index>size){
             System.out.println("Invalid Position Exception");
             return null;
         }
