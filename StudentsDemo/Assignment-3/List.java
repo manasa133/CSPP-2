@@ -89,7 +89,7 @@ public class List<E> {
     public void remove(int index) {
         //Write logic for remove method
 
-        if(index <0 || index>size){
+        if(index <= -1 || index>size){
             System.out.println("Invalid Position Exception");
             return;
         }
