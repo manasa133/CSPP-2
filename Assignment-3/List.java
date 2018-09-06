@@ -38,16 +38,32 @@ public class List<E> {
     public void add(E item) {
         //Inserts the specified element at the end of the list.
         //You can modify the code in this method.
+         if (size == list.length){
+            resize();
+        }
         list[(size++)] = item;
     }
     /*Inserts all the elements of specified int 
     array to the end of list*/
     public void addAll(E[] items) {
         //Write logic for addAll method
+        int tempLen = items.length;
+        if(size+tempLen > list.length){
+            resize();
+        }
         for(E item: items){
             list[size++]=item;
         }
     }
+
+
+    private void resize(){
+        //int[] newArray = new int[2*size];
+        //java.lang.System.arraycopy(list,0,newArray,0,size);
+        list = Arrays.copyOf(list,2*size);
+        //list = newArray;
+
+     }
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
