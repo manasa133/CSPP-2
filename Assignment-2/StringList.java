@@ -121,6 +121,9 @@ public class StringList implements StringListInterface{
      */
     public void add(String item) {
         //Inserts the specified element at the end of the list.
+         if (size == list.length){
+            resize(size*2);
+        }
         list[size++] = item;  
        
     }
@@ -128,11 +131,22 @@ public class StringList implements StringListInterface{
     array to the end of list*/
    
     public void addAll(String[] items) {
+        int tempLen = items.length;
+        if(size+tempLen >= list.length){
+            resize((size+tempLen) * 2);
+        }
         for (String i: items){
             list[size++] = i;
         }
 		
 	}
+     private void resize(int capacity){
+        //int[] newArray = new int[2*size];
+        //java.lang.System.arraycopy(list,0,newArray,0,size);
+        list = Arrays.copyOf(list,2*capacity);
+        //list = newArray;
+
+     }
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
