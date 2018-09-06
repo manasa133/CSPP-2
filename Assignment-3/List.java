@@ -39,7 +39,7 @@ public class List<E> {
         //Inserts the specified element at the end of the list.
         //You can modify the code in this method.
          if (size == list.length){
-            resize();
+            resize(size*2);
         }
         list[(size++)] = item;
     }
@@ -49,7 +49,7 @@ public class List<E> {
         //Write logic for addAll method
         int tempLen = items.length;
         if(size+tempLen >= list.length){
-            resize();
+            resize((size+tempLen) * 2);
         }
         for(E item: items){
             list[size++]=item;
@@ -57,10 +57,10 @@ public class List<E> {
     }
 
 
-    private void resize(){
+    private void resize(int capacity){
         //int[] newArray = new int[2*size];
         //java.lang.System.arraycopy(list,0,newArray,0,size);
-        list = Arrays.copyOf(list,2*size);
+        list = Arrays.copyOf(list,2*capacity);
         //list = newArray;
 
      }
