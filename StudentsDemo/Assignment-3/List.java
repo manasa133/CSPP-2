@@ -39,7 +39,7 @@ public class List<E> {
     public void add(E item) {
         //Inserts the specified element at the end of the list.
         //You can modify the code in this method.
-        if(size==list.length){
+        if(size == list.length){
             resize();
         }
         list[(size++)] = item;
@@ -89,7 +89,7 @@ public class List<E> {
     public void remove(int index) {
         //Write logic for remove method
 
-        if(index <= -1 || index>size){
+        if(index < 0 || index>=size){
             System.out.println("Invalid Position Exception");
             return;
         }
