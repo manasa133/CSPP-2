@@ -87,8 +87,8 @@ public class List<E> {
      */
     public void remove(int index) {
         //Write logic for remove method
-        if(index<0 || index >size){
-            System.out.println("");
+        if(index<0 || index >=size){
+            System.out.println("Invalid Position Exception");
             return;
         }
         int i=0;
@@ -111,10 +111,10 @@ public class List<E> {
      */
     public E get(int index) {
          //Write logic for get method
-        // if(index<0 || index >size){
-        //     System.out.println("");
-        //     return;
-        // }
+        if(index<0 || index >size){
+            System.out.println("Invalid Position Exception");
+            return null;
+        }
         return list[index];
     }
     /*
