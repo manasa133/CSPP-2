@@ -207,13 +207,16 @@ public class List<E> {
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
      */
-    public boolean equals(List<E> listdata)
+    public boolean equals(List<E> listdata)   
     {
-        // if(this.size != listdata.size){
-        //     return false;
-        // }
+        if (!(listdata instanceof List)) {
+            return false;
+        }
         for(int i =0 ; i < this.size ; i++){
-            if(this.list[i] != listdata.list[i]){
+            // System.out.println(this.list[i]+"comapre"+listdata.list[i]);
+            //  System.out.println(this.list[i]!=listdata.list[i]);
+            if(!(this.list[i].equals(listdata.list[i]))){
+                // System.out.println(this.list[i]+"inseide"+listdata.list[i]);
                 return false;
             }
         }
