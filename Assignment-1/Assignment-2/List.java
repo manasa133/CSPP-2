@@ -218,8 +218,8 @@ public class List<E> {
         }
         for(int i =0 ; i < this.size ; i++){
             boolean flag = false;
-            for(int j =0 ; j < this.size ; i++){
-            if(this.list[i] ==listdata.list[j]){
+            for(int j =0 ; j < listdata.size ; j++){
+            if(this.list[i].equals(listdata.list[j])){
                 flag = true;
                 break;
             }
