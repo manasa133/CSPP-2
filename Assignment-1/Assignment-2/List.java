@@ -46,7 +46,7 @@ public class List<E> {
           add(item);
         }
 
-        
+
     }
     /**
      * { function_description }
@@ -167,7 +167,7 @@ public class List<E> {
        //Write logic for indexOf method
         for(int i =0;i<size;i++){
             if(list[i].equals(item)){
-               return i; 
+               return i;
             }
         }
         return -1;
@@ -194,25 +194,25 @@ public class List<E> {
             System.out.println("Index Out of Bounds Exception");
            return null;
         }
-       
+
         List sub = new List(end - start);
 
-        
+
         for(int i = start; i<end ; i++){
             sub.add(list[i]);
-        } 
+        }
         return sub;
 
     }
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
      */
-    public boolean equals(List<E> listdata)   
+    public boolean equals(List<E> listdata)
     {
-        if (!(listdata instanceof List)) {
-            return false;
-        }
-      
+        // if (!(listdata instanceof List)) {
+        //     return false;
+        // }
+
       if(this.size != listdata.size){
             return false;
         }

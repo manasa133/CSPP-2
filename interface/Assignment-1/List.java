@@ -235,20 +235,62 @@ public class List {
     second parameter indicates the endIndex. Returns null and print
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
+    if start index and e
+
+    */
+
+    /*
+
+    Return null and print "Index Out of Bounds Exception" if
+    start and end parameters are invalid
+    eg: [3, 2] start is greater than end
+        [-3, -4] start and end are negative
+        If List has one Element
+        [1, 3] is Out of Bounds, as size is One
+        Given an empty list
+        [0, 0] is Out of Bounds, as size is zero
+    Caution: If size > 0 and start and end are equal then
+    sublist is empty
+
+
+
     */
     public List subList(int start, int end)
     {
     // write the logic for subList
-        if(start >= 0 && end >= 0 && start <= end && end <= size){
-            List newObj = new List(end - start);
-            for(int i = start; i < end; i++){
-                newObj.add(arr[i]);
-            }
-            return newObj;
-        }else {
+
+        if(start < 0){
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
+        if(end < 0){
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if(start > size){
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if(end > size){
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if(end < start){
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if(start == end && start >= size){
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+
+
+        List newObj = new List(end - start);
+        for(int i = start; i < end; i++){
+            newObj.add(arr[i]);
+        }
+        return newObj;
+
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
@@ -274,9 +316,9 @@ public class List {
     * Think about this case and make the method
     * the simpler.
     */
-    public void clear()
-    {
+    public void clear() {
     // write the logic for clear.
+        size = 0;
 
     }
 

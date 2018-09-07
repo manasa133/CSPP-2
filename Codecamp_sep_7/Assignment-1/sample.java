@@ -14,14 +14,18 @@ class Student {
 		}
 		return true;
 	}
+	public String toString(){
+		return name+rollnum;
+	}
 }
 class sample {
 	public static void main(String[] args) {
 		Student obj1 = new Student(123,"abc");
-		Student obj2 = new Student(123,"abc");
-		Student obj3 = new Student(123,"abc2");
-		System.out.println(obj1.equals(obj2));
-		System.out.println(obj1.equals(obj3));
+		System.out.println(obj1);
+		// Student obj2 = new Student(123,"abc");
+		// Student obj3 = new Student(123,"abc2");
+		// System.out.println(obj1.equals(obj2));
+		// System.out.println(obj1.equals(obj3));
 
 	}
 }
