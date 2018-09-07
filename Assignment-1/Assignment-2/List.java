@@ -212,13 +212,21 @@ public class List<E> {
         if (!(listdata instanceof List)) {
             return false;
         }
+      
+      if(this.size != listdata.size){
+            return false;
+        }
         for(int i =0 ; i < this.size ; i++){
-            // System.out.println(this.list[i]+"comapre"+listdata.list[i]);
-            //  System.out.println(this.list[i]!=listdata.list[i]);
-            if(!(this.list[i].equals(listdata.list[i]))){
-                // System.out.println(this.list[i]+"inseide"+listdata.list[i]);
-                return false;
+            boolean flag = false;
+            for(int j =0 ; j < this.size ; i++){
+            if(this.list[i] ==listdata.list[j]){
+                flag = true;
+                break;
             }
+        }
+        if(!flag){
+            return false;
+        }
         }
         return true;
     }
