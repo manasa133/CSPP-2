@@ -209,9 +209,9 @@ public class List<E> {
      */
     public boolean equals(List<E> listdata)
     {
-        if(this.size != listdata.size){
-            return false;
-        }
+        // if(this.size != listdata.size){
+        //     return false;
+        // }
         for(int i =0 ; i < this.size ; i++){
             if(this.list[i] != listdata.list[i]){
                 return false;
