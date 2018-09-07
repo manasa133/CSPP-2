@@ -277,7 +277,7 @@ public class List {
     {
         // write the logic
         for (int i: items){
-            list[size++] = i;
+            add(i);
         }
     }
 
