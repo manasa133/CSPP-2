@@ -328,7 +328,7 @@ public class List {
       {
         // write the logic for subList
         //System.out.println(start + " -" +end);
-        if(start<=-1 || end <= -1   ){
+        if(start<=-1 || end <= -1 || start>end  ){
             System.out.println("Index Out of Bounds Exception");
            return null;
         }
