@@ -283,16 +283,17 @@ public class List {
 
     public boolean equals(List otherlist )
     {
-    // Replace the code below
-        if(size != otherlist.size){
-            return false;
-        }
-        for(int i = 0;i<size;i++){
-            if(this.list[i]!= otherlist.list[i]){
-                return false;
-            }
-        }
-    return true;
+    // // Replace the code below
+    //     if(size != otherlist.size){
+    //         return false;
+    //     }
+    //     for(int i = 0;i<size;i++){
+    //         if(this.list[i]!= otherlist.list[i]){
+    //             return false;
+    //         }
+    //     }
+    // return true;
+      return  this.toString().equals( otherlist.toString());
     }
     /*
     * Removes all the elements from list
