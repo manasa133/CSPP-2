@@ -221,21 +221,21 @@ public class List {
      public void removeAll(int[] newArray)
      {
         // write the logic
-        // for(int item : newArray){
-        //    // remove(indexOf(item));
-        //     int index = indexOf(item);
-        //     while( index!=-1 ){
-        //         remove(index);
-        //         index = indexOf(item);
-        //     }
-        // }
         for(int item : newArray){
-            for(int i =0 ;i< size;i++){
-                if(item == list[i]){
-                    remove(i);
-                }
+           // remove(indexOf(item));
+            int index = indexOf(item);
+            while( index!=-1 ){
+                remove(index);
+                index = indexOf(item);
             }
         }
+        // for(int item : newArray){
+        //     for(int i =0 ;i< size;i++){
+        //         if(item == list[i]){
+        //             remove(i);
+        //         }
+        //     }
+        // }
 
 
      }
