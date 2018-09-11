@@ -30,6 +30,7 @@ class Sortedset extends Set{
 	}
 
 	int[] subset(int from,int to){
+		try{
 		int start = 0;
 		for(int i =0 ;i< size();i++){
 			if(arr[i]==from){
@@ -51,6 +52,11 @@ class Sortedset extends Set{
 			newArr[j] = arr[i];
 		}
 		return  newArr;
+	}
+	catch(Exception e){
+		System.out.println("Invalid arguments to subset exception");
+	}
+	return null;
 	}
 
 	int[] headSet(int to){
