@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.*;
 class Sortedset extends Set{
 	int[] arr;
 	Sortedset(){
@@ -37,9 +38,10 @@ class Sortedset extends Set{
 
 	int[] subset(int from,int to){
 		//System.out.println(from+"--"+to);
-		if(from > to){
+		if(Math.abs(from) > Math.abs(to)){
 			System.out.println("Invalid arguments to subset");
-			return null; }
+			return null;
+		}
 		int start = -1;
 		for(int i =0 ;i< size();i++){
 			if(arr[i]==from){
@@ -54,6 +56,7 @@ class Sortedset extends Set{
 				break;
 			}
 		}
+		System.out.println(start+"-- "+stop);
 		if(stop == -1 || start == -1){
 			System.out.println("Invalid arguments to subset");
 			return null;
@@ -62,6 +65,7 @@ class Sortedset extends Set{
 		for(int i = start,j=0 ;i<stop;i++, j++){
 			newArr[j] = arr[i];
 		}
+		System.out.println(Arrays.toString(newArr));
 		return  newArr;
 	}
 	int[] headSet(int to){
@@ -123,7 +127,6 @@ class Solution{
 					int1s[i] =Integer.parseInt(val1s[i]);
 				}
 				Arrays.toString(obj.subset(int1s[0],int1s[1]));
-
 				break;
 				case "last":
 				obj.last();
