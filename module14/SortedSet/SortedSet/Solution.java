@@ -45,7 +45,7 @@ class Sortedset extends Set{
 		for(int i = start,j=0 ;i<stop;i++, j++){
 			newArr[j] = get(i);
 		}
-		System.out.println(Arrays.toString(newArr));
+		//System.out.println(Arrays.toString(newArr));
 		return  newArr;
 	}
 	int[] headSet(int to){
@@ -98,7 +98,6 @@ class Solution{
 					ints[i] =Integer.parseInt(vals[i]);
 				}
 				obj.addAll(ints);
-
 				break;
 				case "subSet":
 				String[] val1s =  value[1].split(",");
@@ -107,8 +106,10 @@ class Solution{
 					int1s[i] =Integer.parseInt(val1s[i]);
 				}
 				int[]  a  = obj.subset(int1s[0],int1s[1]);
-				System.out.println("i am called");
-				Arrays.toString(a);
+				if(a!=null){
+					System.out.println(Arrays.toString(a));
+				}
+
 				break;
 				case "last":
 				obj.last();
