@@ -36,6 +36,7 @@ class Sortedset extends Set{
     }
 
 	int[] subset(int from,int to){
+		//System.out.println(from+"--"+to);
 		if(from > to){
 			System.out.println("Invalid arguments to subset");
 			return null; }
@@ -121,14 +122,14 @@ class Solution{
 				for(int i =0;i< val1s.length;i++){
 					int1s[i] =Integer.parseInt(val1s[i]);
 				}
-				obj.subset(int1s[0],int1s[1]);
+				Arrays.toString(obj.subset(int1s[0],int1s[1]));
 
 				break;
 				case "last":
 				obj.last();
 				break;
 				case "headSet":
-				obj.headSet(Integer.parseInt(value[1]));
+				Arrays.toString(obj.headSet(Integer.parseInt(value[1])));
 				break;
 				case "print":
 				System.out.println(obj);
