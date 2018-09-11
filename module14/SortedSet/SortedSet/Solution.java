@@ -37,20 +37,21 @@ class Sortedset extends Set{
 
 	int[] subset(int from,int to){
 		try{
-		int start = 0;
+		int start = -1;
 		for(int i =0 ;i< size();i++){
 			if(arr[i]==from){
 				start = i;
 				break;
 			}
-
 		}
-		int stop=0;
+		int stop=-1;
 		for(int i =0 ;i< size();i++){
 			if(arr[i]==to){
 				stop = i;
 				break;
 			}
+		}if(stop == -1 || start == -1){
+			throw new ArithmeticException("exception");
 
 		}
 		int[] newArr = new int[stop-start];
