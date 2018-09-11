@@ -2,6 +2,7 @@ import java.util.*;
 class Sortedset extends Set{
 	int[] arr;
 	Sortedset(){
+		arr =  new int[10];
 
 	}
 	Sortedset(int[] param){
