@@ -1,10 +1,7 @@
 import java.util.*;
 import java.lang.*;
 class Sortedset extends Set{
-	int[] arr;
 	Sortedset(){
-		arr =  new int[10];
-
 	}
 	Sortedset(int[] param){
 		for(int i : param){
@@ -12,29 +9,25 @@ class Sortedset extends Set{
 		}
 	}
 	public void add(int item){
-		if(size() == arr.length){
-			resize();
-		}
-		if( size()==0 ){
-			arr[size()] =item;
-			setSize(size()+1);
-
-		}
-		int index;
-		for(index = 0; index <size() ; index++){
-			if(arr[index]> item){
-				break;
+		if(!contains(item)){
+			if( size()==0 ){
+				add(item,0);
+				return;
 			}
+			int index;
+			for(index = 0; index <size() ; index++){
+				if(get(index)> item){
+					break;
+				}
+			}
+			add(item,index);
 		}
-		for(int i = size() ; i> index ; i--){
-				arr[i] = arr[i-1];
-		}
-		arr[index] = item;
-		setSize(size()+1);
+		// for(int i = size() ; i> index ; i--){
+		// 		arr[i] = arr[i-1];
+		// }
+		// arr[index] = item;
+		// setSize(size()+1);
 	}
-	private void resize() {
-        arr = Arrays.copyOf(arr, size() * 2);
-    }
 
 	int[] subset(int from,int to){
 		//System.out.println(from+"--"+to);
@@ -44,14 +37,14 @@ class Sortedset extends Set{
 		}
 		int start = -1;
 		for(int i =0 ;i< size();i++){
-			if(arr[i]==from){
+			if(get(i)==from){
 				start = i;
 				break;
 			}
 		}
 		int stop=-1;
 		for(int i =0 ;i< size();i++){
-			if(arr[i]==to){
+			if(get(i)==to){
 				stop = i;
 				break;
 			}
@@ -63,13 +56,13 @@ class Sortedset extends Set{
 		}
 		int[] newArr = new int[stop-start];
 		for(int i = start,j=0 ;i<stop;i++, j++){
-			newArr[j] = arr[i];
+			newArr[j] = get(i);
 		}
 		System.out.println(Arrays.toString(newArr));
 		return  newArr;
 	}
 	int[] headSet(int to){
-		return subset(arr[0],to);
+		return subset(get(0),to);
 
 	}
 	 int last(){
@@ -80,7 +73,7 @@ class Sortedset extends Set{
 	 }catch(Exception e){
 	 	System.out.println("Set​ ​ Empty​ ​ Exception");
 	 }
-	 	return arr[size()-1];
+	 	return get(size()-1);
 	 }
 
 	 void addAll(int[] a){
@@ -89,17 +82,17 @@ class Sortedset extends Set{
 	 	}
 	 }
 
-	 public String toString() {
-        if (size() == 0) {
-            return "{}";
-        }
-        StringBuilder sb = new StringBuilder("{");
-        for (int i = 0; i < size() - 1; i++) {
-            sb.append(arr[i] + ", ");
-        }
-        sb.append(arr[size() - 1] + "}");
-        return sb.toString();
-    }
+	 // public String toString() {
+  //       if (size() == 0) {
+  //           return "{}";
+  //       }
+  //       StringBuilder sb = new StringBuilder("{");
+  //       for (int i = 0; i < size() - 1; i++) {
+  //           sb.append(arr[i] + ", ");
+  //       }
+  //       sb.append(arr[size() - 1] + "}");
+  //       return sb.toString();
+  //   }
 
 
 }

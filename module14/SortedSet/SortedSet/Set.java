@@ -45,7 +45,7 @@ public class Set {
     /**
      * resize the set by double, when it is full.
      */
-    private void resize() {
+    public void resize() {
         set = java.util.Arrays.copyOf(set, size * 2);
     }
 
@@ -176,4 +176,19 @@ public class Set {
     public void setSize(int i){
         size = i;
     }
+    public int getSetLength(){
+        return set.length;
+    }
+    public void add(int item,int index){
+        if(index>= set.length){
+            resize();
+        }
+        for(int i =size; i > index;i--){
+            set[i]=set[i-1];
+        }
+        set[index] = item;
+        size ++;
+
+    }
+
 }
