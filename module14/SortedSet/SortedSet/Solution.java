@@ -80,6 +80,18 @@ class Sortedset extends Set{
 	 	}
 	 }
 
+	 public String toString() {
+        if (size() == 0) {
+            return "{}";
+        }
+        StringBuilder sb = new StringBuilder("{");
+        for (int i = 0; i < size() - 1; i++) {
+            sb.append(arr[i] + ", ");
+        }
+        sb.append(arr[size() - 1] + "}");
+        return sb.toString();
+    }
+
 
 }
 class Solution{
