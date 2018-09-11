@@ -29,27 +29,14 @@ class Sortedset extends Set{
 		// setSize(size()+1);
 	}
 
-	int[] subset(int from,int to){
-		//System.out.println(from+"--"+to);
+	public int[] subset(int from,int to){
 		if(Math.abs(from) > Math.abs(to)){
 			System.out.println("Invalid arguments to subset");
 			return null;
 		}
-		int start = -1;
-		for(int i =0 ;i< size();i++){
-			if(get(i)==from){
-				start = i;
-				break;
-			}
-		}
-		int stop=-1;
-		for(int i =0 ;i< size();i++){
-			if(get(i)==to){
-				stop = i;
-				break;
-			}
-		}
-		System.out.println(start+"-- "+stop);
+		int start = -1,stop = -1;
+		start = indexOf(from);
+		stop = indexOf(to);
 		if(stop == -1 || start == -1){
 			System.out.println("Invalid arguments to subset");
 			return null;
@@ -119,7 +106,9 @@ class Solution{
 				for(int i =0;i< val1s.length;i++){
 					int1s[i] =Integer.parseInt(val1s[i]);
 				}
-				Arrays.toString(obj.subset(int1s[0],int1s[1]));
+				int[]  a  = obj.subset(int1s[0],int1s[1]);
+				System.out.println("i am called");
+				Arrays.toString(a);
 				break;
 				case "last":
 				obj.last();
