@@ -36,7 +36,9 @@ class Sortedset extends Set{
     }
 
 	int[] subset(int from,int to){
-		try{
+		if(from > to){
+			System.out.println("Invalid arguments to subset");
+			return null; }
 		int start = -1;
 		for(int i =0 ;i< size();i++){
 			if(arr[i]==from){
@@ -50,9 +52,9 @@ class Sortedset extends Set{
 				stop = i;
 				break;
 			}
-		}if(stop == -1 || start == -1){
-			throw new ArithmeticException("exception");
-
+		}
+		if(stop == -1 || start == -1){
+			System.out.println();
 		}
 		int[] newArr = new int[stop-start];
 		for(int i = start,j=0 ;i<stop;i++, j++){
@@ -60,12 +62,6 @@ class Sortedset extends Set{
 		}
 		return  newArr;
 	}
-	catch(Exception e){
-		System.out.println("Invalid arguments to subset exception");
-	}
-	return null;
-	}
-
 	int[] headSet(int to){
 		return subset(arr[0],to);
 
