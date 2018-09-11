@@ -11,6 +11,9 @@ class Sortedset extends Set{
 		}
 	}
 	public void add(int item){
+		if(size() == arr.length){
+			resize();
+		}
 		if( size()==0 ){
 			arr[size()] =item;
 			setSize(size()+1);
@@ -28,6 +31,9 @@ class Sortedset extends Set{
 		arr[index] = item;
 		setSize(size()+1);
 	}
+	private void resize() {
+        arr = Arrays.copyOf(arr, size() * 2);
+    }
 
 	int[] subset(int from,int to){
 		try{
