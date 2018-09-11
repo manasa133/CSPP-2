@@ -54,7 +54,8 @@ class Sortedset extends Set{
 			}
 		}
 		if(stop == -1 || start == -1){
-			System.out.println();
+			System.out.println("Invalid arguments to subset");
+			return null;
 		}
 		int[] newArr = new int[stop-start];
 		for(int i = start,j=0 ;i<stop;i++, j++){
