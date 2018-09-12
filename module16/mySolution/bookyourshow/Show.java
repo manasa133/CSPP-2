@@ -14,7 +14,7 @@ class Show {
 	 public String toString() {
     String s = "";
     s = s + movieName + ",";
-    s = s + movieTime + " ";
+    s = s + movieTime;
     // s = s + "{";
     // for (int i = 0; i < seatNumbers.length; i++) {
     //   s = s + seatNumbers[i];
