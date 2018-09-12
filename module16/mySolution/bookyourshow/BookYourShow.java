@@ -26,6 +26,7 @@ class BookYourShow{
 		if(count == 0){
 			System.out.println("No show");
 		}
+		boolean booked = false;
 		for(Show s : shows){
 			if(s!=null){
 				if(s.movieName.equals(movie) && s.movieTime.equals(time)){
@@ -35,6 +36,7 @@ class BookYourShow{
 								if(s.bookedSeats[i]==null){
 									//System.out.println("BOOOKED: "+ p);
 									s.bookedSeats[i] = p;
+									booked = true;
 									//System.out.println("BOOkedd"+s.bookedSeats[i]);
 								}
 							}
@@ -42,6 +44,10 @@ class BookYourShow{
 					}
 				}
 			}
+		}
+
+		if(!booked){
+			System.out.println("No show");
 		}
 
 	}
