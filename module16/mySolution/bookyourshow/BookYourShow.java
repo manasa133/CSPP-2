@@ -25,13 +25,25 @@ class BookYourShow{
 	public void bookAShow(String movie,String time,Patron p,String[] seats ){
 		if(count == 0){
 			System.out.println("No show");
+			return;
 		}
 		boolean booked = false;
+		for(Show s  : shows){
+			if(s!=null){
+				if(s.movieName.equals(movie) && s.movieTime.equals(time)){
+					booked = true;
+				}
+			}
+		}
+		if(!booked){
+			System.out.println("No show");
+			return;
+		}
 		for(Show s : shows){
 			if(s!=null){
-				System.out.println(movie + "--"+time);
-				System.out.print("MY");
-				System.out.println(s.movieName.equals(movie) && s.movieTime.equals(time));
+				//System.out.println(movie + "--"+time);
+				//System.out.print("MY");
+				//System.out.println(s.movieName.equals(movie) && s.movieTime.equals(time));
 				if(s.movieName.equals(movie) && s.movieTime.equals(time)){
 					for(String each : seats){
 						for(int i = 0; i< s.seatNumbers.length ; i++){
@@ -48,10 +60,9 @@ class BookYourShow{
 				}
 			}
 		}
+		//System.out.println("booked---" + booked);
 
-		// if(!booked){
-		// 	System.out.println("No show");
-		// }
+
 
 	}
 
