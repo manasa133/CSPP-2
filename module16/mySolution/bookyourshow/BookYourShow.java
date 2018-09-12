@@ -99,6 +99,7 @@ class BookYourShow{
 
 	public void showAll(){
 		for(Show s : shows){
+			if(s!=null){
 			String res ="";
 			res += s.movieName+",";
 			res+=s.movieTime+",";
@@ -119,6 +120,7 @@ class BookYourShow{
 
 
 		}
+	}
 
 	}
 }
