@@ -25,4 +25,18 @@ class Show {
     return s;
   }
 
+  public String toString(Show s1) {
+    String s = "";
+    s = s + movieName + ",";
+    s = s + movieTime;
+    // s = s + "{";
+    // for (int i = 0; i < seatNumbers.length; i++) {
+    //   s = s + seatNumbers[i];
+    //   if (i != seatNumbers.length - 1)
+    //     s = s + ",";
+    // }
+    // s = s + "}";
+    return s;
+  }
+
 }

@@ -94,14 +94,33 @@ class BookYourShow{
 		}else{
 			System.out.println("Invalid");
 		}
-
-
-	// public void showAll(){
-	// 	for(Show s : shows){
-	// 		for()
-	// 	}
-	//}
-
 	}
 
+
+	public void showAll(){
+		for(Show s : shows){
+			String res ="";
+			res += s.movieName+",";
+			res+=s.movieTime+",";
+			res+="[";
+			for(int i =0 ;i < s.seatNumbers.length -1 ;i++){
+				if(s.bookedSeats[i]==null){
+					res+=s.seatNumbers[i]+",";
+					continue;
+				}
+				res=res+"N/A"+",";
+			}
+			if(s.bookedSeats[s.seatNumbers.length -1]==null){
+				res+=s.seatNumbers[s.seatNumbers.length -1]+"]";
+			}else{
+				res=res+"N/A"+"]";
+			}
+			System.out.println(res);
+
+
+		}
+
+	}
 }
+
+
