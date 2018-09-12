@@ -35,6 +35,10 @@ class BookYourShow{
 		System.out.println("No show");
 		return;
 	}
+	if(getAShow( moviename,dattime)==null){
+		System.out.println("No show");
+		return;
+	}
 		for(Show s : showsArray){
 			if(s!=null){
 			if(s.movieName.equals(moviename) && s.dateTime.equals(dattime)){
