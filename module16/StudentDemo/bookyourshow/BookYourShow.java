@@ -78,9 +78,16 @@ class BookYourShow{
 	}
 
 	public void showAll(){
+
 		for(Show s: showsArray){
 			if(s!=null){
-
+				String res =s.movieName+",";
+				res+=s.dateTime+",[";
+				for(int i =0; i< s.seatNums.length-1;i++){
+					res+=s.seatNums[i]+",";
+				}
+				res+=s.seatNums[s.seatNums.length-1]+"]";
+				 System.out.println(res);
 			}
 
 		}
