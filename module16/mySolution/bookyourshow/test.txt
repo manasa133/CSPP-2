@@ -1,0 +1,86 @@
+########## Testcase 0: Passed ##########
+Expected Output: 
+No show
+9848100101 Logan Aug 19 2018 14:30
+9885234566 Hal Aug 21 2018 17:30
+
+Your Output: 
+No show
+9848100101 Logan Aug 19 2018 14:30
+9885234566 Hal Aug 21 2018 17:30
+
+----------------------------------------
+########## Testcase 1: Failed ##########
+Expected Output: 
+99595967052 Pandas Aug 19 2018 17:30
+Pandas,Aug 19 2018 17:30
+Invalid
+No show
+Invalid
+Black,Aug 22 2018 12:30
+No show
+9885234566 Black Aug 22 2018 12:30
+
+Your Output: 
+99595967052 Pandas Aug 19 2018 17:30
+Pandas,Aug 19 2018 17:30
+invalid
+No show
+invalid
+Black,Aug 22 2018 12:30
+No show
+9885234566 Black Aug 22 2018 12:30
+
+----------------------------------------
+########## Testcase 2: Failed ##########
+Expected Output: 
+No show
+Invalid
+Invalid
+Thor:Rangnarok,Aug 21 2018 17:30
+No show
+Mdma,Aug 21 2018 17:30
+No show
+No show
+Invalid
+9885234566 Thor:Rangnarok Aug 21 2018 17:30
+
+Your Output: 
+invalid
+invalid
+Thor:Rangnarok,Aug 21 2018 17:30
+No show
+Mdma,Aug 21 2018 17:30
+No show
+invalid
+9885234566 Thor:Rangnarok Aug 21 2018 17:30
+
+----------------------------------------
+########## Testcase 3: Failed ##########
+Expected Output: 
+No show
+No show
+9885254568 Baby_driver Aug 22 2018 12:30
+No show
+Gold,Aug 21 2018 17:30,[B8,B9,B10,N/A,C2,C3,C4,C5,C6,C7,C8,C9,C10,N/A,D2,D3,D4,D5,D6,D7,D8,D9,D10]
+Baby_driver,Aug 22 2018 12:30,[C2,C3,C4,C5,C6,C7,C8,C9,C10,N/A,D2,D3,D4,D5,D6,D7,D8,D9,D10]
+MIB,Aug 19 2018 12:30,[A6,A7,A8,A9,A10,B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,D1,D2,D3,D4,D5,D6,D7,D8,D9,D10]
+Flower,Aug 21 2018 17:30,[B8,B9,B10,C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,D1,D2,D3,D4,D5,D6,D7,D8,D9,D10]
+Logan,Aug 19 2018 14:30,[C2,C3,C4,C5,C6,C7,C8,C9,C10,D1,D2,D3,D4,D5,D6,D7,D8,D9,D10]
+
+Your Output: 
+No show
+No show
+9885254568 Baby_driver Aug 22 2018 12:30
+No show
+
+----------------------------------------
+Result: 1/4 testcases passed.
+Starting audit...
+Audit done.
+
+
+[master 86e86b0] "check_style_score -> 1 of 4 passed. style score: 1/1 "
+ 3 files changed, 2 insertions(+), 2 deletions(-)
+ rewrite module16/mySolution/bookyourshow/Show.class (95%)
+

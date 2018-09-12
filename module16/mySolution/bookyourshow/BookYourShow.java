@@ -69,7 +69,7 @@ class BookYourShow{
 		if(booked){
 			System.out.println(mobilenum+" "+ movename+" " + datetime);
 		}else{
-			System.out.println("invalid");
+			System.out.println("Invalid");
 		}
 
 
