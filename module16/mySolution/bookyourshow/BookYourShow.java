@@ -30,6 +30,7 @@ class BookYourShow{
 						for(int i = 0; i< s.seatNumbers.length ; i++){
 							if(each.equals(s.seatNumbers[i])){
 								if(s.bookedSeats[i]==null){
+									//System.out.println("BOOOKED: "+ p);
 									s.bookedSeats[i] = p;
 								}
 							}
@@ -40,16 +41,26 @@ class BookYourShow{
 		}
 
 	}
-	public void printTicket(String mobilenum,String movename,String datetime){{
+
+
+	public void printTicket(String mobilenum,String movename,String datetime){
+
 		for(Show s : shows){
-			for(int i =0 ;i < s.bookedSeats.length;i++){
-				if(s.bookedSeats[i].mobileNum.equals(mobilenum)){
-					System.out.println(s.bookedSeats[i]);
-					System.out.println(s);
-				}
+			if(s!=null){
+				if(s.movieName.equals(movename)){
+					System.out.println("PT:"+movename);
+				for(int i =0 ;i < s.bookedSeats.length;i++){
+					if(s.bookedSeats[i] != null){
+						if(s.bookedSeats[i].mobileNum.equals(mobilenum)){
+							System.out.println(mobilenum);
+							System.out.println(s.bookedSeats[i]);
+							System.out.println(s);
+						}
+					}
+				}}
 			}
 		}
-	}
+
 
 	// public void showAll(){
 	// 	for(Show s : shows){
