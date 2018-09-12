@@ -31,6 +31,10 @@ class BookYourShow{
 	}
 
 	public void bookAShow( String moviename, String dattime, Patron p, String[] bookingSeats){
+	if(size==0){
+		System.out.println("No show");
+		return;
+	}
 		for(Show s : showsArray){
 			if(s!=null){
 			if(s.movieName.equals(moviename) && s.dateTime.equals(dattime)){
@@ -56,13 +60,15 @@ class BookYourShow{
 						booked = true;
 					}
 				}
-
 				}
 			}
 		}
 		}
 		if(booked){
 			System.out.println(mobNum +" "+moviename +" "+ dattime);
+		}
+		else{
+			System.out.println("Invalid");
 		}
 
 	}
