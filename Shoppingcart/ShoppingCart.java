@@ -3,24 +3,28 @@ class ShoppingCart{
 	Item[] catalog;
 	int cartSize;
 	int catalogSize;
+	boolean coupen = false;
+	double discount =0.0;
+	String[] coupens={"IND10","IND20","IND30","IND50"};
 	ShoppingCart(){
 		cart = new Item[20];
 		catalog = new Item[20];
 		cartSize=0;
 		catalogSize=0;
 	}
+
 	 void addToCart(Item item){
-	 	System.out.println(checkQunatity(item));
+	 	//System.out.println(checkQunatity(item));
 	 	if(checkQunatity(item)){
 	 		cart[cartSize++] = item;
-	 		System.out.println("++++"+cart[cartSize-1]);
+	 		//System.out.println("++++"+cart[cartSize-1]);
 		 }
 	 }
 	 boolean checkQunatity(Item item){
 	 	for(Item i : catalog){
 	 		if(i!=null){
-	 			if(item.equals(i)){
-	 				System.out.println(item.itemQuantity+"-"+i.itemQuantity);
+	 			if(i.equals(item)){
+	 				//System.out.println(item.itemQuantity+"-"+i.itemQuantity);
 	 				if(item.itemQuantity<=i.itemQuantity){
 	 					i.itemQuantity = i.itemQuantity - item.itemQuantity;
 	 					return true;
@@ -35,24 +39,61 @@ class ShoppingCart{
 	 }
 	 void removeFromCart(Item item){
 	 	int index;
+	 	int inittialQuat=0;
 	 	for(index =0;index<cartSize;index++){
 	 		if(item.equals(cart[index])){
-	 			break;
+
+	 			cart[index].itemQuantity = cart[index].itemQuantity-item.itemQuantity;
 	 		}
 	 	}
-	 	for(int i =index;i<cartSize-1;i++){
-	 		cart[i]=cart[i+1];
-	 	}
-	 	cartSize--;
+	 	// for(int i =index;i<cartSize-1;i++){
+	 	// 	cart[i]=cart[i+1];
+	 	// }
+	 	// cartSize--;
 	 }
 
 	 void printInvoice(){
+	 	System.out.println("Name   quantity   Price");
+	 	for(Item i : cart){
+	 		if(i!=null){
+	 			System.out.println(i.toString1()+" "+getPrice(i));
+	 		}
+	 	}
+	 	double total=totalAmount();
+	 	System.out.println("totalAmount: "+total);
+	 	System.out.println("Total:"+total);
+	 	System.out.println("Disc%:"+discount);
+	 	//applyDiscount();
+	 	System.out.println("Tax:" +(0.15)*total);
+	 	payableAmount();
+	 }
+	 void applyDiscount(String cou){
+	 	boolean valid = false;
+	 	for(int i =0;i< coupens.length; i++){
+	 		if(cou.equals(coupens[i])){
+	 			coupen = true;
+	 			discount = Integer.parseInt(cou.substring(4))/100;
+	 			coupens[i]=null;
+	 		}
+	 	}
 
 	 }
+	 void payableAmount(){
+	 	double total = totalAmount();
+	 	double dis = discount;
+	 	double tax = (0.15)*(total-dis);
+
+	 	System.out.println("Payable amount: "+(total+tax));
+
+
+	 }
+
 	 void showCart(){
 	 	for(Item i : cart){
 	 		if(i!=null){
-	 			System.out.println(i.toString1());
+	 			if(i.itemQuantity!=0){
+	 				System.out.println(i.toString1());
+	 			}
 	 		}
 	 	}
 
@@ -74,15 +115,18 @@ class ShoppingCart{
 	 	}
 
 	 }
-	 void totalAmount(){
+	 double totalAmount(){
 	 	double total=0;
 	 	for(Item i: cart){
 	 		if(i!=null){
 	 			total+= getPrice(i)*i.itemQuantity;
 	 		}
 	 	}
-	 	System.out.println("totalAmount: "+total);
+	 	//System.out.println("totalAmount: "+total);
+	 	return total;
 
 	 }
+
+
 
 }

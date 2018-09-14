@@ -20,14 +20,22 @@ class Solution{
 				break;
 				case "catalog":
 				shop.showCatalog();
+				break;
 				case "totalAmount":
-				shop.totalAmount();
+				System.out.println("totalAmount: "+shop.totalAmount());
 				break;
 				case "remove":
 				String[] tokens = input[1].split(",");
 				shop.removeFromCart(new Item(tokens[0],tokens[1]));
+				break;
 				case "print":
 				shop.printInvoice();
+				break;
+				case "payableAmount":
+				shop.payableAmount();
+				break;
+				case "coupon":
+				shop.applyDiscount(input[1]);
 				break;
 
 
