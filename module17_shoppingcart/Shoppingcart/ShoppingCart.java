@@ -24,18 +24,18 @@ class ShoppingCart{
 				cart[cartSize++] = item;
 			}
 		}
-		else{
-
-		}
 	}
-	// private boolean inCart(Item item){
-	// 	for(int i =0 ; i< cartSize;i++){
-	// 		if(cart[i].equals(item)){
-	// 			cart[i].
-	// 		}
-	// 	}
-
-	// }
+	boolean inCart(Item item){
+		for(Item s : cart){
+			if(s!=null){
+				if(s.equals(item)){
+					s.quantity =s.quantity+item.quantity;
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 	private boolean checkCatalog(Item given){
 		for(Item i : catalog){
@@ -53,12 +53,19 @@ class ShoppingCart{
 	}
 
 	void removeFromCart(Item item){
+		for(int i =0;i<cartSize;i++){
+			if(item.equals(cart[i])){
+				cart[i].quantity= cart[i].quantity-item.quantity;
+			}
+		}
 
 	}
 	void showCart(){
 		for(Item i : cart){
 			if(i!=null){
-				System.out.println(i.name+" "+i.quantity);
+				if(i.quantity!=0){
+					System.out.println(i.name+" "+i.quantity);
+				}
 			}
 		}
 	}
@@ -68,12 +75,11 @@ class ShoppingCart{
 				System.out.println(i);
 			}
 		}
-
 	}
 	double getTotalAmount(){
 		double total=0;
 		for(int i =0; i< cartSize;i++){
-			total = cart[i].quantity * getPrice(cart[i]);
+			total += cart[i].quantity * getPrice(cart[i]);
 		}
 		return total;
 
@@ -89,9 +95,6 @@ class ShoppingCart{
 		return 0.0;
 	}
 	void applyCoupon(String cou){
-		if(couponApplied){
-			return;
-		}
 		boolean valid= false;
 		for(String s : validCoupons){
 			if(s.equals(cou)){
@@ -102,21 +105,40 @@ class ShoppingCart{
 			System.out.println("Invalid coupon");
 			return;
 		}
+		if(couponApplied){
+			return;
+		}
 		for(String s : validCoupons){
 			if(s.equals(cou)){
 				int num =  Integer.parseInt(cou.substring(3));
-				discount = getTotalAmount()*num/100;
+				discount = getTotalAmount()/100*num;
 				couponApplied = true;
-				valid = true;
 			}
 		}
-
-
 	}
 	void printInvoice(){
-
+		System.out.println("Name   quantity   Price");
+		for(Item s : cart){
+			if(s!=null){
+				if(s.quantity!=0){
+			System.out.println(s.name+" "+s.quantity+" "+getPrice(s));
+		}
+		}
+		}
+		double total = getTotalAmount();
+		double newTotal = total - discount;
+		double tax = newTotal *15/100;
+		System.out.println("Total:"+getTotalAmount());
+		System.out.println("Disc%:"+discount);
+		System.out.println("Tax:"+tax);
+		System.out.println("Payable amount: "+getPayableAmount());
 	}
-	void getPayableAmount(){
+
+	public double getPayableAmount(){
+		double total = getTotalAmount();
+		double newTotal = total - discount;
+		double tax = newTotal *15/100;
+		return newTotal+tax;
 
 
 	}

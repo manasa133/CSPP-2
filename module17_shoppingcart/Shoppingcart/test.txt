@@ -1,0 +1,276 @@
+########## Testcase 0: Passed ##########
+Expected Output: 
+greentea 128 120.0
+Eggs 65 5.0
+rice5kg 109 300.0
+curd 22 30.0
+cofee 81 300.0
+curd 19
+cofee 16
+totalAmount: 5370.0
+curd 14
+cofee 16
+totalAmount: 5220.0
+curd 14
+cofee 15
+totalAmount: 4920.0
+Payable amount: 5658.0
+Name   quantity   Price
+curd 14 30.0
+cofee 15 300.0
+Total:4920.0
+Disc%:0.0
+Tax:738.0
+Payable amount: 5658.0
+
+Your Output: 
+greentea 128 120.0
+Eggs 65 5.0
+rice5kg 109 300.0
+curd 22 30.0
+cofee 81 300.0
+curd 19
+cofee 16
+totalAmount: 5370.0
+curd 14
+cofee 16
+totalAmount: 5220.0
+curd 14
+cofee 15
+totalAmount: 4920.0
+Payable amount: 5658.0
+Name   quantity   Price
+curd 14 30.0
+cofee 15 300.0
+Total:4920.0
+Disc%:0.0
+Tax:738.0
+Payable amount: 5658.0
+
+----------------------------------------
+########## Testcase 1: Failed ##########
+Expected Output: 
+bread 194 30.0
+chicken 148 180.0
+Eggs 218 5.0
+peas 47 40.0
+milk 31 28.0
+rice5kg 108 300.0
+cup 143 400.0
+milk 19
+cup 2
+totalAmount: 1332.0
+milk 19
+milk 19
+peas 5
+bread 50
+Payable amount: 2566.8
+totalAmount: 2232.0
+Payable amount: 1283.4
+Name   quantity   Price
+milk 19 28.0
+peas 5 40.0
+bread 50 30.0
+Total:2232.0
+Disc%:1116.0
+Tax:167.4
+Payable amount: 1283.4
+
+Your Output: 
+bread 194 30.0
+chicken 148 180.0
+Eggs 218 5.0
+peas 47 40.0
+milk 31 28.0
+rice5kg 108 300.0
+cup 143 400.0
+milk 19
+cup 2
+totalAmount: 1332.0
+milk 19
+cup 0
+milk 19
+cup 0
+peas 5
+bread 50
+Payable amount: 2566.8
+totalAmount: 2232.0
+Payable amount: 1283.4
+Name   quantity   Price
+milk 19 28.0
+cup 0 400.0
+peas 5 40.0
+bread 50 30.0
+Total:2232.0
+Disc%:1116.0
+Tax:167.4
+Payable amount: 1283.4
+
+----------------------------------------
+########## Testcase 2: Passed ##########
+Expected Output: 
+paneer 63 160.0
+curd 219 30.0
+greentea 150 120.0
+oil_1l 114 100.0
+peas 36 40.0
+cofee 146 30.0
+ghee 46 520.0
+honey 79 280.0
+milk 30 30.0
+totalAmount: 14360.0
+honey 50
+milk 12
+cofee 8
+totalAmount: 15960.0
+totalAmount: 15900.0
+Payable amount: 12799.5
+Name   quantity   Price
+honey 50 280.0
+milk 10 30.0
+cofee 8 30.0
+peas 34 40.0
+Total:15900.0
+Disc%:4770.0
+Tax:1669.5
+Payable amount: 12799.5
+
+Your Output: 
+paneer 63 160.0
+curd 219 30.0
+greentea 150 120.0
+oil_1l 114 100.0
+peas 36 40.0
+cofee 146 30.0
+ghee 46 520.0
+honey 79 280.0
+milk 30 30.0
+totalAmount: 14360.0
+honey 50
+milk 12
+cofee 8
+totalAmount: 15960.0
+totalAmount: 15900.0
+Payable amount: 12799.5
+Name   quantity   Price
+honey 50 280.0
+milk 10 30.0
+cofee 8 30.0
+peas 34 40.0
+Total:15900.0
+Disc%:4770.0
+Tax:1669.5
+Payable amount: 12799.5
+
+----------------------------------------
+########## Testcase 3: Passed ##########
+Expected Output: 
+cheese 211 80.0
+honey 150 280.0
+cofee 190 750.0
+greentea 97 120.0
+chicken 147 180.0
+ghee 194 520.0
+rice5kg 169 300.0
+milk 33 28.0
+cofee 4
+chicken 10
+rice5kg 10
+honey 5
+cofee 4
+chicken 10
+rice5kg 12
+honey 5
+cofee 4
+chicken 10
+rice5kg 12
+honey 3
+milk 4
+cheese 4
+totalAmount: 9672.0
+Payable amount: 11122.8
+Invalid coupon
+Payable amount: 11122.8
+Name   quantity   Price
+cofee 4 750.0
+chicken 10 180.0
+rice5kg 12 300.0
+honey 3 280.0
+milk 4 28.0
+cheese 4 80.0
+Total:9672.0
+Disc%:0.0
+Tax:1450.8
+Payable amount: 11122.8
+
+Your Output: 
+cheese 211 80.0
+honey 150 280.0
+cofee 190 750.0
+greentea 97 120.0
+chicken 147 180.0
+ghee 194 520.0
+rice5kg 169 300.0
+milk 33 28.0
+cofee 4
+chicken 10
+rice5kg 10
+honey 5
+cofee 4
+chicken 10
+rice5kg 12
+honey 5
+cofee 4
+chicken 10
+rice5kg 12
+honey 3
+milk 4
+cheese 4
+totalAmount: 9672.0
+Payable amount: 11122.8
+Invalid coupon
+Payable amount: 11122.8
+Name   quantity   Price
+cofee 4 750.0
+chicken 10 180.0
+rice5kg 12 300.0
+honey 3 280.0
+milk 4 28.0
+cheese 4 80.0
+Total:9672.0
+Disc%:0.0
+Tax:1450.8
+Payable amount: 11122.8
+
+----------------------------------------
+Result: 3/4 testcases passed.
+Starting audit...
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:1: Using the '.*' form of import should be avoided - java.util.*. [AvoidStarImport]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:2: Missing a Javadoc comment. [JavadocType]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:2:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:3:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:3:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:3:33: Parameter args should be final. [FinalParameters]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:7:20: 'for' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:7:28: '=' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:7:30: ';' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:7:31: '<' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:7:39: ';' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:7:43: '{' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:9: switch without "default" clause. [MissingSwitchDefault]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:9:31: 'switch' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:9:41: '{' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:12: Line is longer than 80 characters (found 91). [LineLength]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:12:70: ',' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:12:80: ',' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:19:68: ',' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:25: Line is longer than 80 characters (found 91). [LineLength]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:25:67: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:28: Line is longer than 80 characters (found 96). [LineLength]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:28:70: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:32: Line is longer than 80 characters (found 87). [LineLength]
+[ERROR] /home/manasa/Desktop/Students_2018/CSPP-2/GIT/CSPP-2/module17_shoppingcart/Shoppingcart/Solution.java:32:74: ',' is not followed by whitespace. [WhitespaceAfter]
+Audit done.
+Checkstyle ends with 26 errors.
+
