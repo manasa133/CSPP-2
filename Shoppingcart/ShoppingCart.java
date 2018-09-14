@@ -72,6 +72,7 @@ class ShoppingCart{
 	 	for(int i =0;i< coupens.length; i++){
 	 		if(cou.equals(coupens[i])){
 	 			coupen = true;
+	 			System.out.println("DDDDDD"+Integer.parseInt(cou.substring(4))/100);
 	 			discount = Integer.parseInt(cou.substring(4))/100;
 	 			coupens[i]=null;
 	 		}
@@ -82,10 +83,7 @@ class ShoppingCart{
 	 	double total = totalAmount();
 	 	double dis = discount;
 	 	double tax = (0.15)*(total-dis);
-
 	 	System.out.println("Payable amount: "+(total+tax));
-
-
 	 }
 
 	 void showCart(){
@@ -96,7 +94,6 @@ class ShoppingCart{
 	 			}
 	 		}
 	 	}
-
 	 }
 	 double getPrice(Item given){
 	 	for(Item i : catalog){
@@ -105,7 +102,6 @@ class ShoppingCart{
 	 		}
 	 	}
 	 return 0.0;
-
 	 }
 	 void showCatalog(){
 	 	for(Item i : catalog){
