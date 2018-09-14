@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Courseware</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/styles/mdb.min.css">
+  <link rel="stylesheet" href="/static/styles/style.css">
+
+</head>
+<body>
+  <div class="container-fluid row flex-center m-0" style="height: 100vh">
+    <div class="col-lg-4"></div>
+    <div class="card col-sm-12 col-md-12 col-lg-4">
+
+      <!-- Card body -->
+      <div class="card-body">
+
+        <!-- Material form login -->
+        <form method="post" action="/login" class="pt-4 pb-4">
+            <p class="h3 text-center mb-5">MSIT Sign in</p>
+
+            <!-- Material input email -->
+
+            <div class="md-form">
+                <!-- <i class="fa fa-envelope prefix grey-text"></i> -->
+                <input name="username" type="email" id="materialFormLoginEmailEx" class="form-control mb-0" required>
+                <small class="grey-text">Use your MSIT email address</small>
+                <label for="materialFormLoginEmailEx">Email Address</label>
+            </div>
+
+            <!-- Material input password -->
+            <div class="md-form">
+                <!-- <i class="fa fa-lock prefix grey-text"></i> -->
+                <input name="password" type="password" id="materialFormLoginPasswordEx" class="form-control" required>
+                <label for="materialFormLoginPasswordEx">Password</label>
+            </div>
+            <div class="row px-3">
+              <div class="form-check my-4 p-0 col-6">
+                <input class="form-check-input" type="checkbox" id="remember">
+                <label for="remember" class="grey-text">Remember me</label>
+              </div>
+              <div class="form-check my-4 p-0 col-6 text-right">
+                <a href="/forgot_password">Forgot Password?</a>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-red" type="submit">Login</button>
+            </div>
+            <div class="row mt-4">
+              <div class="col-4"></div>
+              <div class="col-8 text-right">
+                <small class="grey-text">Don't have an account? &nbsp;&nbsp;</small><a href="/register">Register</a>
+              </div>
+            </div>
+        </form>
+        <!-- Material form login -->
+
+      </div>
+      <!-- Card body -->
+
+    </div>
+    <div class="col-lg-4"></div>
+
+  </div>
+</body>
+<script type="text/javascript" src="/static/scripts/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/static/scripts/popper.min.js"></script>
+<script type="text/javascript" src="/static/scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/scripts/mdb.min.js"></script>
+<script type="text/javascript" src="/static/scripts/module.js"></script>
+<script type="text/javascript" src="/static/scripts/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="/static/scripts/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="/static/scripts/octopus.js"></script>
+</html>

@@ -41,9 +41,6 @@ class BookYourShow{
 		}
 		for(Show s : shows){
 			if(s!=null){
-				//System.out.println(movie + "--"+time);
-				//System.out.print("MY");
-				//System.out.println(s.movieName.equals(movie) && s.movieTime.equals(time));
 				if(s.movieName.equals(movie) && s.movieTime.equals(time)){
 					for(String each : seats){
 						for(int i = 0; i< s.seatNumbers.length ; i++){
@@ -60,10 +57,6 @@ class BookYourShow{
 				}
 			}
 		}
-		//System.out.println("booked---" + booked);
-
-
-
 	}
 
 

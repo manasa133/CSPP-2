@@ -3,7 +3,7 @@ class ShoppingCart{
 	Item[] catalog;
 	int cartSize;
 	int catalogSize;
-	boolean coupen = false;
+	static boolean coupen = true;;
 	static double discount =0.0;
 	String[] coupens={"IND10","IND20","IND30","IND50"};
 	ShoppingCart(){
@@ -15,11 +15,23 @@ class ShoppingCart{
 
 	 void addToCart(Item item){
 	 	//System.out.println(checkQunatity(item));
+	 	if(!inCart(item)){
 	 	if(checkQunatity(item)){
 	 		cart[cartSize++] = item;
-	 		//System.out.println("++++"+cart[cartSize-1]);
+
 		 }
+		}
 	 }
+	 private boolean inCart(Item item){
+		for(int i =0 ; i< cartSize;i++){
+			if(cart[i].equals(item)){
+				cart[i].itemQuantity+=item.itemQuantity;
+				return true;
+			}
+		}
+		return false;
+
+	}
 	 boolean checkQunatity(Item item){
 	 	for(Item i : catalog){
 	 		if(i!=null){
@@ -42,59 +54,65 @@ class ShoppingCart{
 	 	int inittialQuat=0;
 	 	for(index =0;index<cartSize;index++){
 	 		if(item.equals(cart[index])){
-
 	 			cart[index].itemQuantity = cart[index].itemQuantity-item.itemQuantity;
 	 		}
 	 	}
-	 	// for(int i =index;i<cartSize-1;i++){
-	 	// 	cart[i]=cart[i+1];
-	 	// }
-	 	// cartSize--;
 	 }
 
 	 void printInvoice(){
 	 	System.out.println("Name   quantity   Price");
 	 	for(Item i : cart){
 	 		if(i!=null){
+	 			if(i.itemQuantity!=0){
 	 			System.out.println(i.toString1()+" "+getPrice(i));
+	 		}
 	 		}
 	 	}
 	 	double total=totalAmount();
-	 	System.out.println("totalAmount: "+total);
 	 	System.out.println("Total:"+total);
 	 	System.out.println("Disc%:"+discount);
-	 	//applyDiscount();
-	 	System.out.println("Tax:" +(0.15)*total);
+	 	double newTotal=total-discount;
+	 	System.out.println("Tax:" +(0.15)*newTotal);
 	 	payableAmount();
 	 }
 	 void applyDiscount(String cou){
-	 	boolean valid = false;
 	 	double dis=0.0;
+	 	if(!coupen){
+	 		//System.out.println("Invalid coupon");
+	 		return;
+	 	}
+	 	boolean valid = false;
 	 	for(int i =0;i< coupens.length; i++){
+	 		//System.out.println("******"+cou);
 	 		if(cou.equals(coupens[i])){
-	 			coupen = true;
-	 			//System.out.println("DDDDDD"+Integer.parseInt(cou.substring(3)));
 	 			int num = Integer.parseInt(cou.substring(3));
-	 			dis = num/100.0;
-	 			//System.out.println("****"+dis);
-	 			dis = dis*totalAmount();
-	 			//System.out.println("****"+dis);
+	 			dis = num;
 	 			coupens[i]=null;
+	 			coupen = false;
+	 			valid = true;
 	 		}
 	 	}
-	 	discount = dis;
+	 	if(valid){
+	 	double total = totalAmount();
+	 	double dis1 = (total/100)*dis;
+	 	discount = dis1;
+	 }
+	 else{
+	 	System.out.println("Invalid coupon");
+	 }
 
 	 }
 	 void payableAmount(){
 	 	double total = totalAmount();
-	 	double dis = discount;
-	 	double tax = (0.15)*(total-dis);
-	 	System.out.println("Payable amount: "+(total+tax));
+	 	double newTotal=(total)-discount;
+	 	double tax = (0.15)*(newTotal);
+	 	System.out.println("Payable amount: "+(newTotal+tax));
 	 }
 
 	 void showCart(){
 	 	for(Item i : cart){
 	 		if(i!=null){
+	 			//System.out.println("++++++"+i.itemQuantity);
 	 			if(i.itemQuantity!=0){
 	 				System.out.println(i.toString1());
 	 			}
