@@ -69,11 +69,16 @@ class ShoppingCart{
 	 }
 	 void applyDiscount(String cou){
 	 	boolean valid = false;
+	 	double dis=0.0;
 	 	for(int i =0;i< coupens.length; i++){
 	 		if(cou.equals(coupens[i])){
 	 			coupen = true;
-	 			System.out.println("DDDDDD"+Integer.parseInt(cou.substring(3))/100);
-	 			discount = Integer.parseInt(cou.substring(3))/100;
+	 			System.out.println("DDDDDD"+Integer.parseInt(cou.substring(3)));
+	 			int num = Integer.parseInt(cou.substring(3));
+	 			dis = num/100.0;
+	 			System.out.println("****"+dis);
+	 			discount = discount*totalAmount();
+	 			System.out.println("****"+discount);
 	 			coupens[i]=null;
 	 		}
 	 	}
