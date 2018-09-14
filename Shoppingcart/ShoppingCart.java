@@ -72,8 +72,8 @@ class ShoppingCart{
 	 	for(int i =0;i< coupens.length; i++){
 	 		if(cou.equals(coupens[i])){
 	 			coupen = true;
-	 			System.out.println("DDDDDD"+Integer.parseInt(cou.substring(4))/100);
-	 			discount = Integer.parseInt(cou.substring(4))/100;
+	 			System.out.println("DDDDDD"+Integer.parseInt(cou.substring(3))/100);
+	 			discount = Integer.parseInt(cou.substring(3))/100;
 	 			coupens[i]=null;
 	 		}
 	 	}
