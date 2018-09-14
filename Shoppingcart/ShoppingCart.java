@@ -4,7 +4,7 @@ class ShoppingCart{
 	int cartSize;
 	int catalogSize;
 	boolean coupen = false;
-	double discount =0.0;
+	static double discount =0.0;
 	String[] coupens={"IND10","IND20","IND30","IND50"};
 	ShoppingCart(){
 		cart = new Item[20];
@@ -73,15 +73,16 @@ class ShoppingCart{
 	 	for(int i =0;i< coupens.length; i++){
 	 		if(cou.equals(coupens[i])){
 	 			coupen = true;
-	 			System.out.println("DDDDDD"+Integer.parseInt(cou.substring(3)));
+	 			//System.out.println("DDDDDD"+Integer.parseInt(cou.substring(3)));
 	 			int num = Integer.parseInt(cou.substring(3));
 	 			dis = num/100.0;
-	 			System.out.println("****"+dis);
-	 			discount = discount*totalAmount();
-	 			System.out.println("****"+discount);
+	 			//System.out.println("****"+dis);
+	 			dis = dis*totalAmount();
+	 			//System.out.println("****"+dis);
 	 			coupens[i]=null;
 	 		}
 	 	}
+	 	discount = dis;
 
 	 }
 	 void payableAmount(){
